@@ -87,7 +87,7 @@ csv.each.with_index do |row, row_i|
     end
 end
 
-all_countries = countries.values.find_all{|c| c.total_deaths > 0}.sort_by{|c| PRIORITY.rindex(c.name) ? PRIORITY.index(c.name)+10**10 : c.total_deaths}.reverse
+all_countries = countries.values.find_all{|c| c.total_deaths > 0}.sort_by{|c| PRIORITY.reverse.index(c.name) ? PRIORITY.reverse.index(c.name)+10**10 : c.total_deaths}.reverse
 
 # BUILD CSV DATA ARRAY
 STATS_DAY_COLUMNS = 1   # day-number
